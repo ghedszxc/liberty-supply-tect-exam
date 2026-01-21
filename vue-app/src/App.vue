@@ -1,6 +1,11 @@
 <template>
+  <!-- <div style="position: relative"> -->
   <TopNav />
-  <RouterView />
+  <!-- <NavDrawer /> -->
+  <main>
+    <RouterView />
+  </main>
+  <!-- </div> -->
 </template>
 <script>
 import { RouterView } from 'vue-router'
@@ -14,3 +19,4 @@ export default {
   },
 }
 </script>
+<style scoped></style>
