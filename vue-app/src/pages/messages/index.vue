@@ -1,5 +1,5 @@
 <template>
-  <div>messages page</div>
+  <h2>Messages</h2>
 </template>
 <script>
 export default {

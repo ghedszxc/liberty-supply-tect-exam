@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h2>home</h2>
-    <div style="height: 50vh; background-color: #ffffff; border-radius: 5px"></div>
+    <h2>Home</h2>
+    <Card> </Card>
   </div>
 </template>
 <script>
@@ -9,3 +9,9 @@ export default {
   data: () => ({}),
 }
 </script>
+
+<style scoped>
+.p-card {
+  height: 50vh;
+}
+</style>

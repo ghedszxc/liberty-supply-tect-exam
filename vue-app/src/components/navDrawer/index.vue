@@ -1,15 +1,17 @@
 <template>
   <aside>
     <h1>Messenger App</h1>
-    <div v-for="(data, key) in pages" :key="key" style="margin-bottom: 20px">
-      <RouterLink
-        :to="data?.url"
-        :style="{
-          backgroundColor: $route.path == data.url ? '#009BD4' : '',
-        }"
-      >
-        <i :class="data?.icon" style="margin-right: 3px"></i>
-        {{ data?.text }}
+    <div v-for="(data, key) in pages" :key="key" style="margin-bottom: 10px">
+      <RouterLink :to="data?.url">
+        <Button
+          fluid
+          :style="{
+            backgroundColor: $route.path == data.url ? '#009BD4' : '',
+          }"
+        >
+          <i :class="data?.icon" style="margin-right: 3px"></i>
+          <span>{{ data?.text }}</span>
+        </Button>
       </RouterLink>
     </div>
   </aside>
@@ -28,7 +30,7 @@ export default {
 <style scoped>
 aside {
   height: 100%;
-  width: 20vw;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -36,27 +38,22 @@ aside {
   background-color: #1c3c70;
   overflow-x: hidden;
   transition: 0.5s;
+  padding: 0 1rem;
 }
-
-/* @media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 0;
-  }
-} */
 
 h1 {
   color: #ffffff;
   text-align: center;
+  text-transform: uppercase;
+  font-size: x-large;
+  padding: 1rem 0;
 }
 
-a {
-  color: #ffffff;
-  padding: 10px;
-  /* border: 2px solid red; */
-  width: 100px !important;
-  height: 50px !important;
-  place-items: center;
-  text-decoration: none;
-  border-radius: 8px;
+.p-button {
+  justify-content: left;
+}
+
+span {
+  font-weight: 100;
 }
 </style>

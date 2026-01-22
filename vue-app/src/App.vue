@@ -22,7 +22,7 @@ export default {
 <style scoped>
 main {
   transition: margin-left 0.5s;
-  margin-left: 20vw;
+  margin-left: 250px;
   padding: 16px;
 }
 </style>
