@@ -4,9 +4,10 @@
 
     <Card>
       <template #content>
-        <span>
+        <span v-if="!errMsg">
           {{ users }}
         </span>
+        <span v-else>{{ errMsg }}</span>
       </template></Card
     >
   </div>
@@ -15,10 +16,15 @@
 export default {
   data: () => ({
     users: [],
+    errMsg: '',
   }),
   async beforeMount() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users')
-    this.users = await response.json()
+    try {
+      const response = await fetch('https://jsonplacasdeholder.typicode.com/users')
+      this.users = await response.json()
+    } catch (err) {
+      this.errMsg = err
+    }
   },
 }
 </script>
