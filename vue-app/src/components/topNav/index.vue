@@ -32,29 +32,32 @@
   </nav>
 </template>
 
-<script>
-export default {
-  data: () => ({}),
-  methods: {
-    updateNavDrawer() {
-      if (!this.$globalStore?.showNavDrawer) {
-        document.querySelector('aside').style.visibility = 'visible'
-        document.querySelector('aside').style.opacity = '1'
+<script setup>
+import { storeToRefs } from 'pinia'
+import { useGlobalStore } from '@/stores/index'
 
-        document.querySelector('main').style.marginLeft = '250px'
-        document.querySelector('nav').style.marginLeft = '250px'
-      } else {
-        document.querySelector('aside').style.visibility = 'hidden'
-        document.querySelector('aside').style.opacity = '0'
-        document.querySelector('aside').style.transition = 'visibility 0s, opacity 0.5s linear'
+const store = useGlobalStore()
 
-        document.querySelector('main').style.marginLeft = '0'
-        document.querySelector('nav').style.marginLeft = '0'
-      }
+const { showNavDrawer } = storeToRefs(store)
+const { onUpdateShowNavDrawer } = store
 
-      this.$globalStore.onUpdateShowNavDrawer(!this.$globalStore?.showNavDrawer)
-    },
-  },
+function updateNavDrawer() {
+  if (!showNavDrawer.value) {
+    document.querySelector('aside').style.visibility = 'visible'
+    document.querySelector('aside').style.opacity = '1'
+
+    document.querySelector('main').style.marginLeft = '250px'
+    document.querySelector('nav').style.marginLeft = '250px'
+  } else {
+    document.querySelector('aside').style.visibility = 'hidden'
+    document.querySelector('aside').style.opacity = '0'
+    document.querySelector('aside').style.transition = 'visibility 0s, opacity 0.5s linear'
+
+    document.querySelector('main').style.marginLeft = '0'
+    document.querySelector('nav').style.marginLeft = '0'
+  }
+
+  onUpdateShowNavDrawer(!showNavDrawer.value)
 }
 </script>
 

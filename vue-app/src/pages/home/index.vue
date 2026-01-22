@@ -12,21 +12,20 @@
     >
   </div>
 </template>
-<script>
-export default {
-  data: () => ({
-    users: [],
-    errMsg: '',
-  }),
-  async beforeMount() {
-    try {
-      const response = await fetch('https://jsonplacasdeholder.typicode.com/users')
-      this.users = await response.json()
-    } catch (err) {
-      this.errMsg = err
-    }
-  },
-}
+<script setup>
+import { ref, onBeforeMount } from 'vue'
+
+const users = ref([])
+const errMsg = ref('')
+
+onBeforeMount(async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users')
+    users.value = await response.json()
+  } catch (err) {
+    errMsg.value = err
+  }
+})
 </script>
 
 <style scoped>

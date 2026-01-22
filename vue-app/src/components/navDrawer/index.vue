@@ -19,17 +19,17 @@
     <footer><span>v1.0.0</span></footer>
   </aside>
 </template>
-<script>
+
+<script setup>
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-export default {
-  data: () => ({
-    pages: [
-      { text: 'Home', icon: 'pi pi-home', url: '/' },
-      { text: 'Messages', icon: 'pi pi-comments', url: '/messages' },
-    ],
-  }),
-}
+
+const pages = ref([
+  { text: 'Home', icon: 'pi pi-home', url: '/' },
+  { text: 'Messages', icon: 'pi pi-comments', url: '/messages' },
+])
 </script>
+
 <style scoped>
 aside {
   background-color: var(--p-nav-drawer-background);
