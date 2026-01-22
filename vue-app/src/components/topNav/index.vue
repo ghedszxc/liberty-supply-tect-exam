@@ -5,7 +5,7 @@
       height: 3.25rem;
       place-content: center;
       padding: 0 1rem;
-      background-color: #ffffff;
+      background-color: var(--p-palette-plain);
     "
   >
     <div style="display: flex; justify-content: space-between">
@@ -20,7 +20,12 @@
       </div>
 
       <div style="place-content: center">
-        <Button icon="pi pi-user" variant="text" rounded style="background-color: #e1e3e4" />
+        <Button
+          icon="pi pi-user"
+          variant="text"
+          rounded
+          style="background-color: var(--p-palette-grayish)"
+        />
         <Button icon="pi pi-sign-out" variant="text" rounded />
       </div>
     </div>

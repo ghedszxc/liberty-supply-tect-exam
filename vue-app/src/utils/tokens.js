@@ -5,55 +5,38 @@ import Aura from '@primeuix/themes/aura'
 const customPreset = definePreset(Aura, {
   semantic: {
     primary: {
-      50: '{indigo.50}',
-      100: '{indigo.100}',
-      200: '{indigo.200}',
-      300: '{indigo.300}',
-      400: '#F3F5F6',
-      500: '#1C3C70',
-      600: '#009BD4',
-      700: '{indigo.700}',
-      800: '{indigo.800}',
-      900: '{indigo.900}',
-      950: '{indigo.950}',
+      50: '{sky.50}',
+      100: '{sky.100}',
+      200: '{sky.200}',
+      300: '{sky.300}',
+      400: '{sky.400}',
+      500: '{gray.500}',
+      600: '{sky.600}',
+      700: '{sky.700}',
+      800: '{sky.800}',
+      900: '{sky.900}',
+      950: '{sky.950}',
     },
-    // colorScheme: {
-    //     light: {
-
-    //     },
-    //     dark: {
-
-    //     }
-    // }
-    // colorScheme: {
-    //   light: {
-    //     semantic: {
-    //       highlight: {
-    //         background: '{primary.50}',
-    //         color: '{primary.700}',
-    //       },
-    //     },
-    //   },
-    //   //   dark: {
-    //   //     semantic: {
-    //   //       highlight: {
-    //   //         background: '{primary.200}',
-    //   //         color: '{primary.900}',
-    //   //       },
-    //   //     },
-    //   //   },
-    // },
+    typography: {
+      h1: '24px',
+      h2: '20px',
+      span: '14px',
+    },
+    palette: {
+      primary: '#1C3C70',
+      secondary: '#009BD4',
+      plain: '#FFFFFF',
+      grayish: '#E1E3E4',
+      none: 'transparent',
+    },
+    colorScheme: {
+      light: {
+        'nav.drawer.background': '#1C3C70',
+        'current.page.indicator': '#009BD4',
+      },
+      dark: {},
+    },
   },
-  //   semantic: {
-  //     colorScheme: {
-  //       light: {
-  //         //...
-  //       },
-  //       dark: {
-  //         //...
-  //       },
-  //     },
-  //   },
 })
 
 export default customPreset

@@ -6,7 +6,8 @@
         <Button
           fluid
           :style="{
-            backgroundColor: $route.path == data.url ? '#009BD4' : '',
+            backgroundColor:
+              $route.path == data.url ? 'var(--p-current-page-indicator)' : 'var(--p-palette-none)',
           }"
         >
           <i :class="data?.icon" style="margin-right: 3px"></i>
@@ -14,6 +15,8 @@
         </Button>
       </RouterLink>
     </div>
+
+    <footer><span>v1.0.0</span></footer>
   </aside>
 </template>
 <script>
@@ -29,31 +32,31 @@ export default {
 </script>
 <style scoped>
 aside {
+  background-color: var(--p-nav-drawer-background);
+
   height: 100%;
   width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #1c3c70;
   overflow-x: hidden;
   transition: 0.5s;
   padding: 0 1rem;
 }
 
-h1 {
-  color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: x-large;
-  padding: 1rem 0;
+footer {
+  color: var(--p-palette-plain);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
 }
 
+button {
+  border: var(--p-palette-primary);
+}
 .p-button {
   justify-content: left;
-}
-
-span {
-  font-weight: 100;
 }
 </style>
