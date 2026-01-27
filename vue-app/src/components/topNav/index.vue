@@ -1,15 +1,7 @@
 <template>
-  <nav
-    style="
-      position: relative;
-      height: 3.25rem;
-      place-content: center;
-      padding: 0 1rem;
-      background-color: var(--p-palette-plain);
-    "
-  >
-    <div style="display: flex; justify-content: space-between">
-      <div style="place-content: center">
+  <nav>
+    <div class="custom-space-between">
+      <div>
         <Button
           icon="pi pi-bars"
           variant="text"
@@ -19,12 +11,12 @@
         />
       </div>
 
-      <div style="place-content: center">
+      <div>
         <Button
           icon="pi pi-user"
           variant="text"
           rounded
-          style="background-color: var(--p-palette-grayish)"
+          style="background-color: var(--p-gray-100)"
         />
         <Button icon="pi pi-sign-out" variant="text" rounded />
       </div>
@@ -63,7 +55,18 @@ function updateNavDrawer() {
 
 <style scoped>
 nav {
+  position: relative;
+  height: 3.25rem;
+  place-content: center;
+  padding: 0 1rem;
+  background-color: var(--p-white-0);
+
   transition: margin-left 0.5s;
   margin-left: 250px;
+}
+
+.custom-space-between {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

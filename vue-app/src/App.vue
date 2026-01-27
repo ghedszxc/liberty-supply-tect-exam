@@ -19,8 +19,13 @@ main {
   padding: 16px;
 }
 
+/* set icon color globally */
+.p-button-icon {
+  color: var(--p-gray-500);
+}
+
 h1 {
-  color: var(--p-palette-plain);
+  color: var(--p-white-0);
   text-align: center;
   text-transform: uppercase;
   font-size: var(--p-typography-h1);

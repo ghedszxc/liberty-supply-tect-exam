@@ -6,8 +6,7 @@
         <Button
           fluid
           :style="{
-            backgroundColor:
-              $route.path == data.url ? 'var(--p-current-page-indicator)' : 'var(--p-palette-none)',
+            backgroundColor: $route.path == data.url ? 'var(--p-blue-300)' : 'transparent',
           }"
         >
           <i :class="data?.icon" style="margin-right: 3px"></i>
@@ -32,7 +31,7 @@ const pages = ref([
 
 <style scoped>
 aside {
-  background-color: var(--p-nav-drawer-background);
+  background-color: var(--p-blue-500);
 
   height: 100%;
   width: 250px;
@@ -46,16 +45,13 @@ aside {
 }
 
 footer {
-  color: var(--p-palette-plain);
+  color: var(--p-white-0);
   position: fixed;
   bottom: 0;
   left: 0;
   padding: 1rem;
 }
 
-button {
-  border: var(--p-palette-primary);
-}
 .p-button {
   justify-content: left;
 }

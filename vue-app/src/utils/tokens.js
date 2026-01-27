@@ -3,6 +3,15 @@ import Aura from '@primeuix/themes/aura'
 
 /* Works because highlight tokens are defined under colorScheme */
 const customPreset = definePreset(Aura, {
+  primitive: {
+    white: {
+      0: '#FFFFFF',
+    },
+    blue: {
+      300: '#009BD4',
+      500: '#1C3C70',
+    },
+  },
   semantic: {
     primary: {
       50: '{sky.50}',
@@ -10,7 +19,7 @@ const customPreset = definePreset(Aura, {
       200: '{sky.200}',
       300: '{sky.300}',
       400: '{sky.400}',
-      500: '{gray.500}',
+      500: '{sky.500}',
       600: '{sky.600}',
       700: '{sky.700}',
       800: '{sky.800}',
@@ -22,19 +31,14 @@ const customPreset = definePreset(Aura, {
       h2: '20px',
       span: '14px',
     },
-    palette: {
-      primary: '#1C3C70',
-      secondary: '#009BD4',
-      plain: '#FFFFFF',
-      grayish: '#E1E3E4',
-      none: 'transparent',
-    },
-    colorScheme: {
-      light: {
-        'nav.drawer.background': '#1C3C70',
-        'current.page.indicator': '#009BD4',
+  },
+  components: {
+    button: {
+      root: {
+        primary: {
+          borderColor: 'none !important',
+        },
       },
-      dark: {},
     },
   },
 })
